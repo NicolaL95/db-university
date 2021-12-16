@@ -65,3 +65,11 @@ Selezionare tutti i docenti che insegnano nel Dipartimento di Matematica{
     JOIN departments ON departments.id = degrees.department_id
     WHERE departments.name = 'Dipartimento di Matematica'
 }
+
+ Selezionare per ogni studente quanti tentativi d’esame ha sostenuto per superare ciascuno dei suoi esami{
+     SELECT students.name,students.surname,exam_student.exam_id, COUNT(exam_student.exam_id)
+    FROM exam_student
+    JOIN students ON exam_student.student_id = students.id
+    JOIN exams ON exam_student.exam_id = exams.id
+    GROUP BY student_id, exams.id  
+ }
