@@ -47,6 +47,7 @@ Selezionare tutti gli studenti con i dati relativi al corso di laurea a cui sono
     FROM students 
     JOIN degrees ON degree_id = students.degree_id 
     JOIN departments ON departments.id = degrees.department_id
+    ORDER BY students.name, students.surname
 }
 
 Selezionare tutti i corsi di laurea con i relativi corsi e insegnanti{
